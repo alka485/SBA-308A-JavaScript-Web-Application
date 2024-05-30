@@ -16,7 +16,24 @@ searchButton.addEventListener('click' , () => {
     const location  = locationInput.value;
     //console.log(location);
     if (location) {
-       const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
-       console.log(url);
+    //    const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
+    //    console.log(url);
+         fetchWeather(location);
     }
 })
+
+function fetchWeather(location){
+       const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
+       console.log(url);
+       fetch(url) 
+       .then(response => response.json())
+       .then(data => {
+        locationElement.textContent = data.name;
+        temperatureElement.textContent = `${Math.round(data.main.temp)}°C`;
+        descriptionElement.textContent = data.weather[0].description;
+        
+       })
+       .catch(error => {
+        console.error("Error fetching while weather data" , error);
+       })
+}
