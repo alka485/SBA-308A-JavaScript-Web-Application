@@ -38,7 +38,7 @@
     --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     /* --transparent:rgba(255,255,255,0.5); */
-    --max-width: 1170px;
+    --max-width: 400px;
     --fixed-width: 620px;
 }
 
@@ -65,4 +65,16 @@ body {
     background-color:var(--light-shadow);
     box-shadow: var(--dark-shadow);
     margin-top: 105px;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+input[type = "text"]{
+    width: 100%;
+    padding: 1rem;
+    margin: 10px , 0;
+    border: var(--clr-gold);
+    border-radius: var(--radius);
 }
