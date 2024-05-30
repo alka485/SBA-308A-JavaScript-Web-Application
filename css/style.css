@@ -37,6 +37,7 @@
     --radius: 0.5rem;
     --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* --transparent:rgba(255,255,255,0.5); */
     --max-width: 1170px;
     --fixed-width: 620px;
 }
@@ -47,4 +48,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+}
+
+body {
+    font-family: var(--ff-secondary);
+    background-color: var(--clr-grey-10);
+    color: var(--clr-grey-1);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin:  0 auto;
+    text-align: center;
+    padding:2rem;
+    background-color:var(--light-shadow);
+    box-shadow: var(--dark-shadow);
+    margin-top: 105px;
 }
