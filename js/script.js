@@ -1,4 +1,4 @@
-const apiKey = 'b9f6c58391da8f005bd41c6735238193';
+const apiKey =  "b9f6c58391da8f005bd41c6735238193";
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
 const locationInput = document.getElementById('locationInput');
@@ -11,3 +11,12 @@ const temperatureElement = document.getElementById('temperature');
 //console.log(temperatureElement);
 const descriptionElement = document.getElementById('description');
 //console.log(descriptionElement);
+
+searchButton.addEventListener('click' , () => {
+    const location  = locationInput.value;
+    //console.log(location);
+    if (location) {
+       const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
+       console.log(url);
+    }
+})
