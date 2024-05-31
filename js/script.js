@@ -7,10 +7,9 @@ const searchButton = document.getElementById('searchButton');
 //console.log(searchButton);
 const locationElement = document.getElementById('location');
 //console.log(locationElement);
-const temperatureElement = document.getElementById('temp');
+const temperatureElement = document.getElementsByClassName('temp');
 //console.log(temperatureElement);
-const humidityElement = document.getElementById('humidity');
-//console.log(descriptionElement);
+const humidityElement = document.getElementsByClassName('humidity');
 const windIcon = document.querySelector(".wind-icon");
 
 searchButton.addEventListener('click' , () => {
