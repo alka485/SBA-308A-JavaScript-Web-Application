@@ -7,10 +7,11 @@ const searchButton = document.getElementById('searchButton');
 //console.log(searchButton);
 const locationElement = document.getElementById('location');
 //console.log(locationElement);
-const temperatureElement = document.getElementById('temperature');
+const temperatureElement = document.getElementById('temp');
 //console.log(temperatureElement);
-const descriptionElement = document.getElementById('description');
+const humidityElement = document.getElementById('humidity');
 //console.log(descriptionElement);
+const windIcon = document.querySelector(".wind-icon");
 
 searchButton.addEventListener('click' , () => {
     const location  = locationInput.value;
@@ -30,7 +31,8 @@ function fetchWeather(location){
        .then(data => {
         locationElement.textContent = data.name;
         temperatureElement.textContent = `${Math.round(data.main.temp)}°C`;
-        descriptionElement.textContent = data.weather[0].description;
+        humidityElement.textContent = data.main.humidity+"%";
+        windIcon.textContent = data.wind.speed + "km/hr";
         
        })
        .catch(error => {
