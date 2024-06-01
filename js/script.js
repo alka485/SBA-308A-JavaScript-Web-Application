@@ -10,7 +10,8 @@ const locationElement = document.getElementById('location');
 const temperatureElement = document.getElementsByClassName('temp');
 //console.log(temperatureElement);
 const humidityElement = document.getElementsByClassName('humidity');
-const windIcon = document.querySelector(".wind-icon");
+const windIcon = document.querySelector(".wind");
+//console.log(windIcon);
 
 searchButton.addEventListener('click' , () => {
     const location  = locationInput.value;
