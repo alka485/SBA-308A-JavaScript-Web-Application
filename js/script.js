@@ -6,7 +6,7 @@ const searchBox = document.querySelector(".search-box input");
 const locationInput = document.getElementById('locationInput');
 //console.log(locationInput);
 const searchButton = document.getElementById('searchButton');
-console.log(searchButton);
+//console.log(searchButton);
 const locationElement = document.getElementById('location');
 //console.log(locationElement);
 const temperatureElement = document.getElementsByClassName('temp');
@@ -23,10 +23,10 @@ searchButton.addEventListener('click' , () => {
    fetchWeather(searchBox.value);
 })
 
-async function fetchWeather(location){
+ function fetchWeather(location){
        const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
        console.log(url);
-      await fetch(url) 
+       fetch(url) 
        .then(response => response.json())
        .then(data => {
         locationElement.innerHTML = data.name;
@@ -49,7 +49,7 @@ async function fetchWeather(location){
                 weatherIcon.src = "../images/images/mist.png";
             }
 
-            document.querySelector(".weather").style.display = "block";
+            document.querySelector(".weatherinfo").style.display = "block";
         
        })
 
