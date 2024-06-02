@@ -48,8 +48,8 @@ searchButton.addEventListener('click' , () => {
             else if(data.weather[0].main == "Mist"){
                 weatherIcon.src = "../images/images/mist.png";
             }
-
             document.querySelector(".weatherinfo").style.display = "block";
+            localStorage.setItem("location" , data.name);
         
        })
 
