@@ -105,6 +105,11 @@ h1 {
     width: 40px;
     margin-right: 10px;
 }
+
+.humidity,.wind{
+    font-size: 20px;
+    margin-top: -5px;
+}
 /* input[type = "text"]{
     width: 100%;
     padding: 1rem;
