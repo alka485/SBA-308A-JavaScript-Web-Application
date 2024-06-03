@@ -12,6 +12,7 @@ const locationElement = document.getElementById('location');
 const temperatureElement = document.getElementsByClassName('temp');
 //console.log(temperatureElement);
 const humidityElement = document.getElementsByClassName('humidity');
+//console.log(humidityElement);
 const windIcon = document.querySelector(".wind");
 //console.log(windIcon);
 const weatherIcon = document.querySelector(".weather-icon");
@@ -30,7 +31,8 @@ searchButton.addEventListener('click' , () => {
        .then(response => response.json())
        .then(data => {
         locationElement.innerHTML = data.name;
-        temperatureElement.innerHTML= `${Math.round(data.main.temp)}°C`;
+        //temperatureElement.innerHTML= `${Math.round(data.main.temp)}°C`;
+        temperatureElement.innerHTML= `${Math.round(data.main.temp)}&deg;C`;
         humidityElement.innerHTML = data.main.humidity+"%";
         windIcon.innerHTML = data.wind.speed + "km/hr";
 
