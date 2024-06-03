@@ -9,8 +9,8 @@ const searchButton = document.getElementById('searchButton');
 //console.log(searchButton);
 const locationElement = document.getElementById('location');
 //console.log(locationElement);
-const temperatureElement = document.getElementsByClassName('temp');
-//console.log(temperatureElement);
+const temperatureElement = document.getElementById('temp');
+console.log(temperatureElement);
 const humidityElement = document.getElementsByClassName('humidity');
 //console.log(humidityElement);
 const windIcon = document.querySelector(".wind");
@@ -32,8 +32,8 @@ searchButton.addEventListener('click' , () => {
        .then(data => {
         locationElement.innerHTML = data.name;
         //temperatureElement.innerHTML= `${Math.round(data.main.temp)}°C`;
-        temperatureElement.innerHTML= `${Math.round(data.main.temp)}&deg;C`;
-        humidityElement.innerHTML = data.main.humidity+"%";
+        temperatureElement.innerText= `${Math.round(data.main.temp)}°C`;
+        humidityElement.innerHTML = `${data.main.humidity}%`;
         windIcon.innerHTML = data.wind.speed + "km/hr";
 
         if(data.weather[0].main == "Clouds"){
