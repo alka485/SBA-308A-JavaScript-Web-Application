@@ -13,14 +13,14 @@ const temperatureElement = document.getElementById('temp');
 //console.log(temperatureElement);
 const humidityElement = document.getElementById('humidity');
 //console.log(humidityElement);
-const windIcon = document.querySelector(".wind");
+const windIcon = document.getElementById('wind');
 //console.log(windIcon);
 const weatherIcon = document.querySelector(".weather-icon");
 //console.log(weatherIcon);
 
 searchButton.addEventListener('click' , () => {
     //console.log("click");
-    console.log(searchBox.value);
+    //console.log(searchBox.value);
    fetchWeather(searchBox.value);
 })
 
@@ -34,7 +34,7 @@ searchButton.addEventListener('click' , () => {
         //temperatureElement.innerHTML= `${Math.round(data.main.temp)}°C`;
         temperatureElement.innerText= `${Math.round(data.main.temp)}°C`;
         humidityElement.innerHTML = `${data.main.humidity}%`;
-        windIcon.innerHTML = data.wind.speed + "km/hr";
+        windIcon.innerHTML = `${data.wind.speed}km/hr`;
 
         if(data.weather[0].main == "Clouds"){
             weatherIcon.src= '../images/images/clouds.png';
