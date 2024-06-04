@@ -93,9 +93,9 @@ async function fetchWeatherByCoordinates(lat, lon) {
 }
 
 function updateWeatherInfo(data) {
-    locationElement.innerHTML = data.name;
+        locationElement.innerHTML = data.name;
         //temperatureElement.innerHTML= `${Math.round(data.main.temp)}°C`;
-        temperatureElement.innerText= `${Math.round(data.main.temp)}°C`;
+        temperatureElement.innerText= `${Math.round(data.main.temp)}${unitToggle.value === 'metric' ? '°C': '°F'}`;
         humidityElement.innerHTML = `${data.main.humidity}%`;
         windIcon.innerHTML = `${data.wind.speed}km/hr`;
 
