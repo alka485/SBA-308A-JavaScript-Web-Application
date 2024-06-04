@@ -8,47 +8,50 @@
     <title>Weather Forecast</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Weather App</h1>
-        <div class="search-box">
-            <input type="text" name="location" id="locationInput" placeholder="Enter a City">
-            <button type="button" id="searchButton">
-                <img src="./images/images/search.png"/>
-            </button>
-            <!---current location-->
-            <button type="button" id="currentLocationButton">
-                <img src="./images/images/location.png" alt="">
-            </button>
-        </div>
-        <!--Units Toggle-->
-        <div class="units-toggle">
-            <label for="unitToggle">Units:</label>
-            <select name="unitToggle" id="unitToggle">
-                <option value="metric">Celsius</option>
-                <option value="imperial">Farenheit</option>
-            </select>
-        </div>
-        <div class="weatherinfo">
-            <img src="./images/images/rain.png" alt="" class="weather-icon">
-            <h1 id="temp"></h1>
-            <h2 id="location"></h2>
-            <div class="details">
-                <div class="col">
-                    <img src="./images/images/humidity.png" alt="">
-                    <div>
-                        <p id="humidity"></p>
-                        <p>Humidity</p>
+    <div class="background-container">
+        <div class="container">
+            <h1>Weather App</h1>
+            <div class="search-box">
+                <input type="text" name="location" id="locationInput" placeholder="Enter a City">
+                <button type="button" id="searchButton">
+                    <img src="./images/images/search.png"/>
+                </button>
+                <!---current location-->
+                <button type="button" id="currentLocationButton">
+                    <img src="./images/images/location.png" alt="">
+                </button>
+            </div>
+            <!--Units Toggle-->
+            <div class="units-toggle">
+                <label for="unitToggle">Units:</label>
+                <select name="unitToggle" id="unitToggle">
+                    <option value="metric">Celsius</option>
+                    <option value="imperial">Farenheit</option>
+                </select>
+            </div>
+            <div class="weatherinfo">
+                <img src="./images/images/rain.png" alt="" class="weather-icon">
+                <h1 id="temp"></h1>
+                <h2 id="location"></h2>
+                <div class="details">
+                    <div class="col">
+                        <img src="./images/images/humidity.png" alt="">
+                        <div>
+                            <p id="humidity"></p>
+                            <p>Humidity</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <img src="./images/images/wind.png" alt="">
-                    <div>
-                        <p id="wind"></p>
-                        <p>WindSpeed</p>
+                    <div class="col">
+                        <img src="./images/images/wind.png" alt="">
+                        <div>
+                            <p id="wind"></p>
+                            <p>WindSpeed</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+    </div>
     </div>
     <script src="./js/script.js"></script>
 </body>
