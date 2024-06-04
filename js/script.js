@@ -59,3 +59,4 @@ searchButton.addEventListener('click' , () => {
         console.error("Error fetching while weather data" , error);
        })
 }
+
