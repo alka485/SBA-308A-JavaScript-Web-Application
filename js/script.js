@@ -119,7 +119,8 @@ function updateWeatherInfo(data) {
                 weatherIcon.src = ''; // Provide a default or empty src
                 break;
         }
-    
+
+        unitToggle.parentElement.style.display = "block";
         document.querySelector(".weatherinfo").style.display = "block";
         localStorage.setItem("location", data.name);
 
