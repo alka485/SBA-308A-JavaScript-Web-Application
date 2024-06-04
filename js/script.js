@@ -19,6 +19,8 @@ const weatherIcon = document.querySelector(".weather-icon");
 //console.log(weatherIcon);
 const currentLocationButton = document.getElementById('currentLocationButton');
 //console.log(currentLocationButton);
+const unitToggle = document.getElementById('unitToggle');
+//console.log(unitToggle);
 
 //search Button event listener
 searchButton.addEventListener('click' , () => {
@@ -47,9 +49,22 @@ currentLocationButton.addEventListener('click' , () => {
 
     }
 });
+
+
+//Toggle button event listener
+unitToggle.addEventListener("change", () => {
+    //console.log("change");
+    if(locationElement.textContent){
+        fetchWeather(locationElement.textContent);
+    }
+})
+
+
+
 //fetch weather through search button
  function fetchWeather(location){
-       const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
+       const units = unitToggle.value;
+       const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=${units}`;
        console.log(url);
        fetch(url) 
        .then(response => response.json())
@@ -62,7 +77,8 @@ currentLocationButton.addEventListener('click' , () => {
 //fetch weather through current location
 
 async function fetchWeatherByCoordinates(lat, lon) {
-    const url = `${apiUrl}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    const units = unitToggle.value;
+    const url = `${apiUrl}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
     try{
         const response = await fetch (url);
         if(!response.ok) {
