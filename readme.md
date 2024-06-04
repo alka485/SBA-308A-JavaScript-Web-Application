@@ -22,13 +22,11 @@ To get a local copy up and running, follow these simple steps.
 * Internet connection
 
 ## Installation
- 1. Clone the repository:
-
-git clone `https://github.com/yourusername/weather-app.git`
+ 1. Clone the repository: git clone `https://github.com/yourusername/weather-app.git`
 
 2. Navigate to the project directory:
 bash
-cd weather-app
+`cd weather-app`
 
 3. Open `index.html`in your preferred web browser.
 
