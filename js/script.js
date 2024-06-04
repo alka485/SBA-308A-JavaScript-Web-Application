@@ -17,46 +17,95 @@ const windIcon = document.getElementById('wind');
 //console.log(windIcon);
 const weatherIcon = document.querySelector(".weather-icon");
 //console.log(weatherIcon);
+const currentLocationButton = document.getElementById('currentLocationButton');
+//console.log(currentLocationButton);
 
+//search Button event listener
 searchButton.addEventListener('click' , () => {
     //console.log("click");
     //console.log(searchBox.value);
    fetchWeather(searchBox.value);
 })
 
+//Current Location Button
+currentLocationButton.addEventListener('click' , () => {
+    //console.log("working");
+    if(navigator.geolocation){
+        //console.log("on");
+        navigator.geolocation.getCurrentPosition(position => {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            fetchWeatherByCoordinates(lat, lon);
+        
+        }, error => {
+            console.error("Error getting geolocation:" , error);
+            alert("Unable to retrieve your location");
+        });
+
+    } else {
+        alert("GeoLocation is not supported by the browser");
+
+    }
+});
+//fetch weather through search button
  function fetchWeather(location){
        const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
        console.log(url);
        fetch(url) 
        .then(response => response.json())
-       .then(data => {
-        locationElement.innerHTML = data.name;
+       .then(data => updateWeatherInfo(data))
+       .catch(error => {
+        console.error("Error fetching while weather data" , error);
+       })
+}
+
+//fetch weather through current location
+
+async function fetchWeatherByCoordinates(lat, lon) {
+    const url = `${apiUrl}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    try{
+        const response = await fetch (url);
+        if(!response.ok) {
+            throw new Error ('Network response was not ok ' + response.statusText);
+        }
+        const data = await response.json();
+        updateWeatherInfo(data);
+    } catch (error) {
+        console.error("Error fetching weather data", error);
+    }
+
+}
+
+function updateWeatherInfo(data) {
+    locationElement.innerHTML = data.name;
         //temperatureElement.innerHTML= `${Math.round(data.main.temp)}°C`;
         temperatureElement.innerText= `${Math.round(data.main.temp)}°C`;
         humidityElement.innerHTML = `${data.main.humidity}%`;
         windIcon.innerHTML = `${data.wind.speed}km/hr`;
 
-        if(data.weather[0].main == "Clouds"){
-            weatherIcon.src= '../images/images/clouds.png';
-        } else if(data.weather[0].main == "Clear"){
-            weatherIcon.src = "../images/images/clear.png";
-          }
-            else if(data.weather[0].main == "Rain"){  
-                weatherIcon.src = "../images/images/rain.png";
-            }
-            else if(data.weather[0].main == "Drizzle"){
-                    weatherIcon.src = "../images/images/drizzle.png";
-            }
-            else if(data.weather[0].main == "Mist"){
-                weatherIcon.src = "../images/images/mist.png";
-            }
-            document.querySelector(".weatherinfo").style.display = "block";
-            localStorage.setItem("location" , data.name);
-        
-       })
+        switch (data.weather[0].main) {
+            case "Clouds":
+                weatherIcon.src = '../images/images/clouds.png';
+                break;
+            case "Clear":
+                weatherIcon.src = '../images/images/clear.png';
+                break;
+            case "Rain":
+                weatherIcon.src = '../images/images/rain.png';
+                break;
+            case "Drizzle":
+                weatherIcon.src = '../images/images/drizzle.png';
+                break;
+            case "Mist":
+                weatherIcon.src = '../images/images/mist.png';
+                break;
+            default:
+                weatherIcon.src = ''; // Provide a default or empty src
+                break;
+        }
+    
+        document.querySelector(".weatherinfo").style.display = "block";
+        localStorage.setItem("location", data.name);
 
-       .catch(error => {
-        console.error("Error fetching while weather data" , error);
-       })
 }
 
