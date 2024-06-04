@@ -30,4 +30,47 @@ git clone https://github.com/yourusername/weather-app.git
 bash
 cd weather-app
 
-3. Open index.html in your preferred web browser.
+3. Open `index.html`in your preferred web browser.
+
+## Usage
+
+1. Search by City:
+
+* Enter the name of the city in the search input field.
+
+* Click on the search button.
+
+* The weather information for the specified city will be displayed.
+
+2. Use Current Location:
+
+* Click on the current location button.
+
+* Allow the browser to access your location.
+
+* The weather information for your current location will be displayed.
+
+3. Toggle Units:
+
+* Use the units dropdown to switch between metric and imperial units.
+
+* The temperature and wind speed will be updated accordingly.
+
+## Code Overview
+
+# HTML
+The HTML structure consists of a container that holds the search box, weather information, and the unit toggle.
+
+# CSS
+The CSS file (style.css) contains styles for the layout, search box, weather information, and icons.
+
+# JavaScript
+The JavaScript file (script.js) handles the following:
+
+* Fetching weather data from the OpenWeatherMap API.
+* Updating the DOM with the fetched weather information.
+* Handling search and current location functionalities.
+* Toggling between metric and imperial units.
+
+## API Integration
+The app uses the OpenWeatherMap API to fetch weather data. You need an API key to access the weather data. Replace YOUR_API_KEY in the script.js file with your actual API key.
