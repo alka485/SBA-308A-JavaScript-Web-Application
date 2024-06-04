@@ -113,3 +113,22 @@ h1 {
 .weather-info{
     margin-top: 20px;
 }
+
+#currentLocationButton {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px; /* Add some space between the search button and this button */
+}
+
+#currentLocationButton i {
+    color: #555; /* Icon color */
+    font-size: 24px; /* Adjust icon size */
+}
