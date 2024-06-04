@@ -23,8 +23,8 @@ To get a local copy up and running, follow these simple steps.
 
 ## Installation
  1. Clone the repository:
-bash
-git clone https://github.com/yourusername/weather-app.git
+
+git clone `https://github.com/yourusername/weather-app.git`
 
 2. Navigate to the project directory:
 bash
@@ -58,13 +58,13 @@ cd weather-app
 
 ## Code Overview
 
-# HTML
+### HTML
 The HTML structure consists of a container that holds the search box, weather information, and the unit toggle.
 
-# CSS
+### CSS
 The CSS file (style.css) contains styles for the layout, search box, weather information, and icons.
 
-# JavaScript
+### JavaScript
 The JavaScript file (script.js) handles the following:
 
 * Fetching weather data from the OpenWeatherMap API.
