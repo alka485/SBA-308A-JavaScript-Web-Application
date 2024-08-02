@@ -77,4 +77,4 @@ The app uses the OpenWeatherMap API to fetch weather data. You need an API key t
 https://github.com/alka485/SBA-308A-JavaScript-Web-Application.git
 
 ### Deployed Website
- https://alka485.github.io/SBA-308A-JavaScript-Web-Application/
+https://alka485.github.io/SBA-308A-JavaScript-Web-Application/
