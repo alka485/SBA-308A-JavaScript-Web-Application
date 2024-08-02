@@ -72,3 +72,8 @@ The JavaScript file (script.js) handles the following:
 
 ## API Integration
 The app uses the OpenWeatherMap API to fetch weather data. You need an API key to access the weather data. Replace YOUR_API_KEY in the script.js file with your actual API key.
+
+## Github URL
+
+### Deployed Website
+ https://alka485.github.io/SBA-308A-JavaScript-Web-Application/
