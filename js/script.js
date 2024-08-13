@@ -107,7 +107,7 @@ function updateWeatherInfo(data) {
                 weatherIcon.src = '../images/clear.png';
                 break;
             case "Rain":
-                weatherIcon.src = '../images/rain.png';
+                weatherIcon.src = '.../images/rain.png';
                 break;
             case "Drizzle":
                 weatherIcon.src = '../images/drizzle.png';
