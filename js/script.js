@@ -1,6 +1,7 @@
 const apiKey =  "b9f6c58391da8f005bd41c6735238193";
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
+
 const searchBox = document.querySelector(".search-box input");
 //console.log(searchBox);
 const locationInput = document.getElementById('locationInput');
@@ -71,7 +72,7 @@ unitToggle.addEventListener("change", () => {
        .then(data => updateWeatherInfo(data))
        .catch(error => {
         console.error("Error fetching while weather data" , error);
-       })
+       }) 
 }
 
 //fetch weather through current location
